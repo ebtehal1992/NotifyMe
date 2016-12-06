@@ -34,7 +34,7 @@ public class RegisterActivity extends Activity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    private static final String CHECK_PASSWORD = "^[A-Za-z]{0,9}$";
+    private static  String CHECK_PASSWORD = ("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{7,21})");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +95,7 @@ public class RegisterActivity extends Activity {
 
                     Toast.makeText(RegisterActivity.this, "Please check your email", Toast.LENGTH_SHORT).show();
 
-                }else if((mPassword.equals(""))){
+                }else if((!mPassword.matches(CHECK_PASSWORD))){
 
                     Toast.makeText(RegisterActivity.this, "Please check your password", Toast.LENGTH_SHORT).show();
 
