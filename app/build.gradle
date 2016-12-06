@@ -30,6 +30,7 @@ android {
         compile 'com.google.firebase:firebase-messaging:9.0.2'
         compile 'com.firebaseui:firebase-ui-database:0.4.0'
 
+
         testCompile 'junit:junit:4.12'
     }
 }

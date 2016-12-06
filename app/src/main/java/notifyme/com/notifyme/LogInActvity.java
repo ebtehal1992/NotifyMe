@@ -27,7 +27,7 @@ public class LogInActvity extends Activity {
     public EditText mPasswordEditText;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+    private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,31 +76,42 @@ public class LogInActvity extends Activity {
                 final String mEmail = mUsernameEditText.getText().toString();
                 final String mPassword = mPasswordEditText.getText().toString();
 
-                // [START sign_in_with_email]
+                if (!mEmail.matches(EMAIL_PATTERN)) {
 
-                mAuth.signInWithEmailAndPassword(mEmail, mPassword)
+                    Toast.makeText(LogInActvity.this, "Please check your email", Toast.LENGTH_SHORT).show();
 
-                        .addOnCompleteListener(LogInActvity.this, new OnCompleteListener<AuthResult>() {
+                } else if(mPassword.equals("")) {
 
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+                    Toast.makeText(LogInActvity.this, "Please check your password", Toast.LENGTH_SHORT).show();
 
-                                Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+                } else {
 
-                                if (task.isSuccessful()) {
-                                    Intent takeUserToLogin = new Intent(LogInActvity.this, MainActivity.class);
-                                    startActivity(takeUserToLogin);
-                                    Toast.makeText(LogInActvity.this, "Successfully Login", Toast.LENGTH_SHORT).show();
+                    // [START sign_in_with_email]
 
-                                }else{
+                    mAuth.signInWithEmailAndPassword(mEmail, mPassword)
 
-                                    Toast.makeText(LogInActvity.this, "Please check your login credential", Toast.LENGTH_SHORT).show();
+                            .addOnCompleteListener(LogInActvity.this, new OnCompleteListener<AuthResult>() {
+
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                    Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                                    if (task.isSuccessful()) {
+                                        Intent takeUserToLogin = new Intent(LogInActvity.this, MainActivity.class);
+                                        startActivity(takeUserToLogin);
+                                        Toast.makeText(LogInActvity.this, "Successfully Login", Toast.LENGTH_SHORT).show();
+
+                                    } else {
+
+                                        Toast.makeText(LogInActvity.this, "Please check your login credential", Toast.LENGTH_SHORT).show();
+
+                                    }
 
                                 }
 
-                            }
-
-                        });
+                            });
+                }
 
             }
         });
