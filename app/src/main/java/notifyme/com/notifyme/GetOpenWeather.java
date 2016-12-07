@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class Function {
+public class GetOpenWeather {
 
 	// Project Created by Ferdousur Rahman Shajib
 	// www.androstock.com
