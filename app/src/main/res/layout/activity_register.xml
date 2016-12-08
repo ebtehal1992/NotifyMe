@@ -8,8 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="notifyme.com.notifyme.RegisterActivity"
-    android:background="@drawable/bluecloud"
+    tools:context="notifyme.com.notifyme.Authentication.RegisterActivity"
+    android:background="@drawable/vectorcloudbackgroundblue"
     android:theme="@style/AppTheme">
 
     <EditText
@@ -18,28 +18,16 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:maxLength="36"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="17dp"
         android:id="@+id/registerNameEditText"
+        android:hint="Full Name"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="Full Name" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/registerNameEditText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/registerEmailEditText"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Email" />
+        android:textColor="@android:color/white" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,31 +35,53 @@
         android:inputType="textPassword"
         android:ems="10"
         android:maxLength="21"
+        android:id="@+id/registerPasswordEditText"
+        android:hint="Password"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         android:layout_below="@+id/registerEmailEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp"
-        android:id="@+id/registerPasswordEditText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="Password" />
+        android:textColor="@android:color/white" />
 
     <Button
         android:text="Login"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/registerRegisterButton"
+        android:id="@+id/registerLoginButton"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/registerRegisterButton"
         android:layout_alignStart="@+id/registerRegisterButton"
-        android:id="@+id/registerLoginButton" />
+        android:layout_marginBottom="65dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:background="@color/colorPrimaryDark" />
 
     <Button
         android:text="Register"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerRegisterButton"
+        android:layout_above="@+id/registerLoginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:id="@+id/registerRegisterButton"
-        android:layout_below="@+id/registerPasswordEditText"
-        android:layout_centerHorizontal="true" />
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/registerEmailEditText"
+        android:hint="Email"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/registerNameEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/white" />
 </RelativeLayout>

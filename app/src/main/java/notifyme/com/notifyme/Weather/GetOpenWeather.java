@@ -1,4 +1,4 @@
-package notifyme.com.notifyme;
+package notifyme.com.notifyme.Weather;
 
 import android.os.AsyncTask;
 import android.util.Log;

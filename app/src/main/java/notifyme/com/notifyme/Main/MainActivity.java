@@ -1,4 +1,4 @@
-package notifyme.com.notifyme;
+package notifyme.com.notifyme.Main;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,7 +22,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -32,6 +31,9 @@ import com.google.android.gms.location.LocationServices;
 
 import java.text.DecimalFormat;
 
+import notifyme.com.notifyme.R;
+import notifyme.com.notifyme.Weather.GetOpenWeather;
+
 public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener ,LocationListener,SensorEventListener {
 
@@ -40,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements
     public LocationRequest mLocationRequest;
     protected GoogleApiClient mGoogleApiClient;
     public LocationManager mLocationManager;
-    public Double currentlatitude; //51.388871
-    public Double currentlongitude; //51.392204;
+    public Double currentlatitude = 51.412330;
+    public Double currentlongitude = -0.300689;
     public Location mLastLocation;
     // Step Counter Components
     public TextView mStepCounter;
@@ -147,8 +149,9 @@ public class MainActivity extends AppCompatActivity implements
                 asyncTask.execute(mLastLocation.getLatitude(), mLastLocation.getLongitude()); //  asyncTask.execute("Latitude", "Longitude")
 
             } else {
+
                 asyncTask.execute(currentlatitude, currentlongitude);
-                Toast.makeText(MainActivity.this, "No Location Found... " , Toast.LENGTH_LONG).show();
+
 
             }
 

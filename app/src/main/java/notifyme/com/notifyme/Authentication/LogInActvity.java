@@ -1,4 +1,4 @@
-package notifyme.com.notifyme;
+package notifyme.com.notifyme.Authentication;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import notifyme.com.notifyme.Main.MainActivity;
+import notifyme.com.notifyme.R;
 
 import static android.content.ContentValues.TAG;
 
